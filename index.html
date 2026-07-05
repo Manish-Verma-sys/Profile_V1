@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Manish Verma — Senior Product Manager (R&D), AI Platforms</title>
 <meta name="description" content="Manish Verma — Senior Product Manager (R&D) focused on AI platforms, LLM orchestration, agentic workflows and RAG. Inventor on two filed patents, author of two arXiv pre-prints." />
 <meta property="og:title" content="Manish Verma — Senior Product Manager (R&D), AI Platforms" />
@@ -32,12 +32,13 @@
     margin:0;background:var(--bg);color:var(--ink);
     font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
     line-height:1.65;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;                 /* guard against sideways scroll on mobile */
   }
-  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.01em;margin:0}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.01em;margin:0;overflow-wrap:break-word}
   a{color:inherit}
+  img{max-width:100%}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   .eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
-
   /* Nav */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(244,243,239,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
   .nav-inner{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -46,8 +47,7 @@
   nav.links{display:flex;gap:26px;font-size:.9rem}
   nav.links a{color:var(--ink-soft);text-decoration:none;transition:color .15s}
   nav.links a:hover{color:var(--ink)}
-  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
-
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 11px;cursor:pointer;font-size:1.1rem;line-height:1}
   /* Hero */
   .hero{padding:80px 0 64px}
   .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
@@ -61,22 +61,18 @@
   .btn.solid:hover{background:#26261f}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn.ghost:hover{border-color:var(--ink)}
-
   .portrait-wrap{justify-self:center}
   .portrait{width:260px;height:260px;border-radius:50%;object-fit:cover;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface-2)}
   .portrait-fallback{width:260px;height:260px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-size:4.5rem;color:var(--muted);background:linear-gradient(160deg,var(--surface),var(--surface-2));border:1px solid var(--line);box-shadow:var(--shadow)}
-
   /* Stat strip */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;margin-top:8px}
   .stat .n{font-family:"Fraunces",serif;font-size:1.9rem;color:var(--ink)}
   .stat .l{font-size:.82rem;color:var(--muted)}
-
   /* Sections */
   section{padding:66px 0;border-bottom:1px solid var(--line-soft)}
   .sec-head{margin-bottom:34px;max-width:60ch}
   .sec-head h2{font-size:clamp(1.6rem,3.2vw,2.1rem);margin:10px 0 8px}
   .sec-head p{color:var(--muted);margin:0}
-
   /* About */
   .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
   .about-grid p{color:var(--ink-soft);margin:0 0 16px}
@@ -84,7 +80,6 @@
   .facts dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 16px}
   .facts dt{color:var(--muted);font-size:.85rem}
   .facts dd{margin:0;font-size:.9rem;font-weight:500}
-
   /* Experience timeline */
   .tl{position:relative;margin-left:6px}
   .tl-item{position:relative;padding:0 0 34px 34px;border-left:1px solid var(--line)}
@@ -93,7 +88,6 @@
   .tl-item .when{font-size:.8rem;color:var(--muted);letter-spacing:.02em}
   .tl-item h3{font-size:1.14rem;margin:4px 0 2px}
   .tl-item .org{font-size:.92rem;color:var(--ink-soft);font-weight:500;margin-bottom:10px;display:flex;align-items:center}
-
   /* Company / institution logo badges */
   .logo-badge{position:relative;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;vertical-align:middle;margin-right:10px;background:var(--surface);flex:0 0 auto}
   .logo-badge::before{content:attr(data-i);font-size:.7rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
@@ -102,11 +96,9 @@
   .logo-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
   .tl-item ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.93rem}
   .tl-item ul li{margin-bottom:6px}
-
   /* Chips */
   .chips{display:flex;flex-wrap:wrap;gap:10px}
   .chip{font-size:.85rem;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-soft)}
-
   /* Cards */
   .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:24px;transition:transform .18s,box-shadow .18s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
@@ -117,9 +109,7 @@
   .card .go{margin-top:auto;font-size:.85rem;font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
   .card .go::after{content:"→";transition:transform .18s}
   .card:hover .go::after{transform:translateX(4px)}
-
   .cards-3{grid-template-columns:repeat(3,1fr)}
-
   /* Patents list */
   .patent{display:block;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:22px 24px;margin-bottom:16px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
   .patent:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
@@ -130,7 +120,6 @@
   .patent:hover .go-inline{text-decoration:underline}
   .phead{display:flex;align-items:center;margin-bottom:2px}
   .card .logo-badge{margin:0 0 14px 0}
-
   /* Education / certs */
   .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:24px}
@@ -138,13 +127,11 @@
   .panel .sub{color:var(--muted);font-size:.88rem;margin-bottom:16px}
   .panel ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.92rem}
   .panel ul li{margin-bottom:7px}
-
   /* Awards */
   .awards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .award{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:20px;text-align:center}
   .award .n{font-family:"Fraunces",serif;font-size:1.05rem;color:var(--ink)}
   .award .l{font-size:.82rem;color:var(--muted);margin-top:4px}
-
   /* Contact */
   .contact{text-align:center;padding:84px 0}
   .contact h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px}
@@ -153,26 +140,51 @@
   .contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:760px;margin:0 auto}
   .cd{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:14px 22px;min-width:200px}
   .cd-l{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .cd a,.cd span:last-child{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+  .cd a,.cd span:last-child{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem;word-break:break-word}
   .cd a:hover{text-decoration:underline}
-
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.82rem}
 
+  /* ---- Tablet / small laptop ---- */
   @media (max-width:860px){
-    .hero-grid{grid-template-columns:1fr;gap:36px}
-    .portrait-wrap{order:-1;justify-self:start}
-    .about-grid{grid-template-columns:1fr;gap:28px}
+    .hero{padding:52px 0 44px}
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .portrait-wrap{order:-1;justify-self:center}
+    .portrait,.portrait-fallback{width:190px;height:190px}
+    .portrait-fallback{font-size:3.2rem}
+    .hero h1.name{font-size:clamp(2.6rem,11vw,3.6rem);margin:8px 0 12px}
+    .hero .role{font-size:1rem;max-width:none}
+    .hero p.lead{max-width:none}
+    .about-grid{grid-template-columns:1fr;gap:26px}
     .cards,.cards-3,.edu-grid{grid-template-columns:1fr}
-    .stats{grid-template-columns:repeat(2,1fr);gap:22px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:22px 16px}
     .awards{grid-template-columns:1fr 1fr}
+    section{padding:48px 0}
+    .sec-head{margin-bottom:26px}
     nav.links{display:none}
-    nav.links.open{display:flex;position:absolute;top:60px;right:16px;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow)}
+    nav.links.open{display:flex;position:absolute;top:58px;right:16px;flex-direction:column;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;box-shadow:var(--shadow)}
     .menu-btn{display:inline-flex}
+    .cd{min-width:0;flex:1 1 260px}
+  }
+
+  /* ---- Phones ---- */
+  @media (max-width:480px){
+    .wrap,.nav-inner{padding-left:18px;padding-right:18px}
+    .hero{padding:40px 0 36px}
+    .hero h1.name{font-size:clamp(2.3rem,13vw,3rem)}
+    .hero .role{font-size:.96rem}
+    .portrait,.portrait-fallback{width:160px;height:160px}
+    .portrait-fallback{font-size:2.8rem}
+    .stats{grid-template-columns:1fr 1fr;gap:20px 14px;padding:22px 0}
+    .stat .n{font-size:1.6rem}
+    .awards{grid-template-columns:1fr}
+    section{padding:42px 0}
+    .card,.patent,.panel,.facts{padding:20px}
+    .cd{width:100%;flex:1 1 100%}
+    .btn{flex:1 1 auto;justify-content:center}
   }
 </style>
 </head>
 <body>
-
 <header class="nav">
   <div class="nav-inner">
     <div class="brand">Manish&nbsp;Verma <span>· AI Product</span></div>
@@ -188,7 +200,6 @@
     </nav>
   </div>
 </header>
-
 <!-- HERO -->
 <div class="hero wrap">
   <div class="hero-grid">
@@ -209,7 +220,6 @@
       <div class="portrait-fallback" style="display:none;">MV</div>
     </div>
   </div>
-
   <div class="stats">
     <div class="stat"><div class="n">6+ yrs</div><div class="l">IP, R&amp;D &amp; GenAI product</div></div>
     <div class="stat"><div class="n">~2×</div><div class="l">Portfolio ARR growth ($1.32M→$2.61M)</div></div>
@@ -217,7 +227,6 @@
     <div class="stat"><div class="n">2</div><div class="l">arXiv pre-prints</div></div>
   </div>
 </div>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -240,7 +249,6 @@
     </div>
   </div>
 </section>
-
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
@@ -298,7 +306,6 @@
     </div>
   </div>
 </section>
-
 <!-- EXPERTISE -->
 <section id="expertise">
   <div class="wrap">
@@ -322,25 +329,23 @@
     </div>
   </div>
 </section>
-
 <!-- PATENTS -->
 <section id="patents">
   <div class="wrap">
     <div class="sec-head"><div class="eyebrow">Patent Applications</div><h2>Filed inventions.</h2>
       <p>Inventor on two filed patent applications in applied AI.</p></div>
     <a class="patent" href="https://patents.google.com/patent/US20260030308A1/en" target="_blank" rel="noopener">
-      <div class="phead"><span class="logo-badge sm" title="Google Patents"><img alt="Google Patents" data-domain="patents.google.com" src="google_patent_logo.png" onerror="logoFallback(this)"></span><div class="id">US 2026/0030308 A1 · Filed 2025 · Published Jan 2026</div></div>
+      <div class="phead"><span class="logo-badge sm" title="Google Patents"><img alt="Google Patents" data-domain="patents.google.com" src="logos/google_patent_logo.png" onerror="logoFallback(this)"></span><div class="id">US 2026/0030308 A1 · Filed 2025 · Published Jan 2026</div></div>
       <h3>System and method for determining relevant entities and products using an LLM model</h3>
       <div class="meta">Patent application · Large Language Models <span class="go-inline">View on Google Patents →</span></div>
     </a>
     <a class="patent" href="https://patents.google.com/patent/US20240330345A1/en" target="_blank" rel="noopener">
-      <div class="phead"><span class="logo-badge sm" title="Google Patents"><img alt="Google Patents" data-domain="patents.google.com" src="google_patent_logo.png" onerror="logoFallback(this)"></span><div class="id">US 2024/0330345 A1 (App. 18/625,229) · Filed Apr 2024</div></div>
+      <div class="phead"><span class="logo-badge sm" title="Google Patents"><img alt="Google Patents" data-domain="patents.google.com" src="logos/google_patent_logo.png" onerror="logoFallback(this)"></span><div class="id">US 2024/0330345 A1 (App. 18/625,229) · Filed Apr 2024</div></div>
       <h3>Systems and methods for generating suggestions to enhance solutions for a seed problem using LLMs and sustainable technologies</h3>
       <div class="meta">Patent application · LLMs &amp; Sustainable Technologies <span class="go-inline">View on Google Patents →</span></div>
     </a>
   </div>
 </section>
-
 <!-- RESEARCH -->
 <section id="research">
   <div class="wrap">
@@ -364,7 +369,6 @@
     </div>
   </div>
 </section>
-
 <!-- INSIGHTS -->
 <section id="insights">
   <div class="wrap">
@@ -398,7 +402,6 @@
     </div>
   </div>
 </section>
-
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
@@ -413,15 +416,14 @@
       </a>
       <a class="card" href="https://github.com/Manish-Verma-sys" target="_blank" rel="noopener">
         <span class="logo-badge" title="GitHub"><img alt="GitHub" data-domain="github.com" src="logos/Github_logo_svg.jpg" onerror="logoFallback(this)"></span>
-        <div class="tag">GitHub</div>
-        <h3>More on GitHub</h3>
-        <p>Additional experiments and tooling around applied AI and IP automation.</p>
+        <div class="tag">Bioinformatics · NGS</div>
+        <h3>Variant Detection with Samtools</h3>
+        <p>One-month bioinformatics project using Samtools on NGS genomic data to detect variations between the BRCA1 and BRCA2 genes and flag cancer-linked mutations.</p>
         <span class="go">View profile</span>
       </a>
     </div>
   </div>
 </section>
-
 <!-- AWARDS -->
 <section id="awards">
   <div class="wrap">
@@ -436,7 +438,6 @@
     </div>
   </div>
 </section>
-
 <!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
@@ -470,7 +471,6 @@
     </div>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact" style="border-bottom:none;">
   <div class="wrap contact">
@@ -488,11 +488,9 @@
     </div>
   </div>
 </section>
-
 <footer>
   © <span id="yr"></span> Manish Verma · Built as a personal profile.
 </footer>
-
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   // close mobile menu on link click
