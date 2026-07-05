@@ -13,16 +13,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#f4f3ef;          /* off-white */
-    --surface:#faf9f6;
-    --surface-2:#eceae4;
-    --ink:#1b1b1a;         /* light black */
-    --ink-soft:#3c3c3a;
-    --muted:#77756e;       /* grey */
-    --line:#dcdad3;
-    --line-soft:#e6e4dd;
-    --accent:#2b2b29;
-    --shadow:0 1px 2px rgba(20,20,18,.04),0 8px 24px rgba(20,20,18,.06);
+    --bg:#e8e7e2;          /* off-grey */
+    --surface:#f6f5f1;     /* off-white */
+    --surface-2:#dddbd4;
+    --ink:#2d2d2a;         /* soft dark grey */
+    --ink-soft:#4c4b46;
+    --muted:#84827a;       /* grey */
+    --line:#cfcdc5;
+    --line-soft:#d9d7cf;
+    --accent:#3a3a36;
+    --shadow:0 1px 2px rgba(30,30,26,.05),0 10px 28px rgba(30,30,26,.07);
     --radius:14px;
     --max:1080px;
   }
@@ -56,8 +56,8 @@
   .hero p.lead{color:var(--ink-soft);font-size:1.02rem;max-width:44ch}
   .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-size:.9rem;font-weight:500;text-decoration:none;border:1px solid var(--ink);transition:all .18s}
-  .btn.solid{background:var(--ink);color:var(--bg)}
-  .btn.solid:hover{background:#000}
+  .btn.solid{background:var(--accent);color:#f6f5f1;border-color:var(--accent)}
+  .btn.solid:hover{background:#26261f}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn.ghost:hover{border-color:var(--ink)}
 
@@ -113,10 +113,13 @@
   .cards-3{grid-template-columns:repeat(3,1fr)}
 
   /* Patents list */
-  .patent{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:22px 24px;margin-bottom:16px}
+  .patent{display:block;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:22px 24px;margin-bottom:16px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+  .patent:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
   .patent .id{font-size:.78rem;letter-spacing:.08em;color:var(--muted);font-weight:600}
   .patent h3{font-size:1.08rem;margin:8px 0 6px}
-  .patent .meta{font-size:.85rem;color:var(--muted)}
+  .patent .meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+  .go-inline{font-weight:600;color:var(--ink)}
+  .patent:hover .go-inline{text-decoration:underline}
 
   /* Education / certs */
   .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -180,15 +183,14 @@
       <div class="role">LLM Orchestration · Agentic Workflows · RAG &amp; Embedding Strategy</div>
       <p class="lead">I take LLM-powered products from the lab to production at scale — owning the end-to-end lifecycle of Generative AI tools and translating technical trade-offs into business narratives for leadership.</p>
       <div class="cta">
-        <a class="btn solid" href="#contact">Get in touch</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/manish-verma-13346811a/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn solid" href="https://www.linkedin.com/in/manish-verma-13346811a/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn ghost" href="Manish_Verma_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
       </div>
     </div>
     <div class="portrait-wrap">
-      <!-- Drop your headshot at assets/profile.jpg and it will appear here automatically -->
+      <!-- Drop your headshot at profile.jpg (or .png) and it appears here automatically -->
       <img class="portrait" src="profile.jpg" alt="Manish Verma"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+           onerror="if(!this.dataset.f){this.dataset.f=1;this.src='profile.png';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}" />
       <div class="portrait-fallback" style="display:none;">MV</div>
     </div>
   </div>
@@ -311,16 +313,16 @@
   <div class="wrap">
     <div class="sec-head"><div class="eyebrow">Patent Applications</div><h2>Filed inventions.</h2>
       <p>Inventor on two filed patent applications in applied AI.</p></div>
-    <div class="patent">
-      <div class="id">US-20260030308-A1 · Filed July 2024</div>
+    <a class="patent" href="https://patents.google.com/patent/US20260030308A1/en" target="_blank" rel="noopener">
+      <div class="id">US 2026/0030308 A1 · Filed 2025 · Published Jan 2026</div>
       <h3>System and method for determining relevant entities and products using an LLM model</h3>
-      <div class="meta">Patent application · Large Language Models</div>
-    </div>
-    <div class="patent">
-      <div class="id">US-2024/18625229-A · Filed April 2024</div>
+      <div class="meta">Patent application · Large Language Models <span class="go-inline">View on Google Patents →</span></div>
+    </a>
+    <a class="patent" href="https://patents.google.com/patent/US20240330345A1/en" target="_blank" rel="noopener">
+      <div class="id">US 2024/0330345 A1 (App. 18/625,229) · Filed Apr 2024</div>
       <h3>Systems and methods for generating suggestions to enhance solutions for a seed problem using LLMs and sustainable technologies</h3>
-      <div class="meta">Patent application · LLMs &amp; Sustainable Technologies</div>
-    </div>
+      <div class="meta">Patent application · LLMs &amp; Sustainable Technologies <span class="go-inline">View on Google Patents →</span></div>
+    </a>
   </div>
 </section>
 
