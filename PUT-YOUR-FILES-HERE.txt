@@ -1,0 +1,16 @@
+Put these files in this "assets" folder (keep the exact names shown):
+
+REQUIRED FOR IT TO LOOK RIGHT
+  profile.jpg                                                  <- your headshot photo (any square-ish JPG/PNG renamed to profile.jpg)
+  Manish_Verma_Resume.pdf                                      <- your resume
+
+INSIGHTS / WRITING SAMPLES (open as PDF on the site)
+  Tech_Insights.pdf
+  Tech Forecast.pdf
+  Large Language Models Rewriting Pharma's Playbook.pdf
+  Is Drug Discovery Undergoing a Revolution with Large Language Model.pdf
+  Injector.pdf
+  Slime Mold.pdf
+
+All of these are the files you already uploaded — just copy them here with the same names.
+If you skip profile.jpg, the site shows a clean "MV" monogram instead. You can delete this .txt file after.
