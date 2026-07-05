@@ -52,7 +52,8 @@
   .hero{padding:80px 0 64px}
   .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
   .hero h1{font-size:clamp(2.3rem,5vw,3.5rem);margin:14px 0 18px}
-  .hero .role{font-size:1.05rem;color:var(--ink-soft);font-weight:500;margin-bottom:20px}
+  .hero h1.name{font-size:clamp(3rem,7.5vw,5rem);font-weight:600;letter-spacing:-.02em;line-height:1.02;margin:12px 0 14px}
+  .hero .role{font-size:1.08rem;color:var(--ink-soft);font-weight:500;margin-bottom:20px;max-width:40ch}
   .hero p.lead{color:var(--ink-soft);font-size:1.02rem;max-width:44ch}
   .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-size:.9rem;font-weight:500;text-decoration:none;border:1px solid var(--ink);transition:all .18s}
@@ -91,7 +92,14 @@
   .tl-item::before{content:"";position:absolute;left:-6px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--bg)}
   .tl-item .when{font-size:.8rem;color:var(--muted);letter-spacing:.02em}
   .tl-item h3{font-size:1.14rem;margin:4px 0 2px}
-  .tl-item .org{font-size:.92rem;color:var(--ink-soft);font-weight:500;margin-bottom:10px}
+  .tl-item .org{font-size:.92rem;color:var(--ink-soft);font-weight:500;margin-bottom:10px;display:flex;align-items:center}
+
+  /* Company / institution logo badges */
+  .logo-badge{position:relative;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;vertical-align:middle;margin-right:10px;background:var(--surface);flex:0 0 auto}
+  .logo-badge::before{content:attr(data-i);font-size:.7rem;font-weight:700;color:var(--muted);letter-spacing:.02em}
+  .logo-badge img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:5px;background:#fff}
+  .logo-badge.sm{width:28px;height:28px;margin-right:8px}
+  .logo-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
   .tl-item ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.93rem}
   .tl-item ul li{margin-bottom:6px}
 
@@ -120,6 +128,8 @@
   .patent .meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
   .go-inline{font-weight:600;color:var(--ink)}
   .patent:hover .go-inline{text-decoration:underline}
+  .phead{display:flex;align-items:center;margin-bottom:2px}
+  .card .logo-badge{margin:0 0 14px 0}
 
   /* Education / certs */
   .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -139,7 +149,12 @@
   .contact{text-align:center;padding:84px 0}
   .contact h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px}
   .contact p{color:var(--ink-soft);max-width:46ch;margin:0 auto 28px}
-  .contact .cta{justify-content:center;display:flex;flex-wrap:wrap;gap:12px}
+  .contact .cta{justify-content:center;display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:760px;margin:0 auto}
+  .cd{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:14px 22px;min-width:200px}
+  .cd-l{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .cd a,.cd span:last-child{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+  .cd a:hover{text-decoration:underline}
 
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.82rem}
 
@@ -179,8 +194,8 @@
   <div class="hero-grid">
     <div>
       <div class="eyebrow">Senior Product Manager · R&amp;D</div>
-      <h1>AI platforms, from experimentation to production.</h1>
-      <div class="role">LLM Orchestration · Agentic Workflows · RAG &amp; Embedding Strategy</div>
+      <h1 class="name">Manish Verma</h1>
+      <div class="role">AI Platforms · LLM Orchestration · Agentic Workflows · RAG &amp; Embedding Strategy</div>
       <p class="lead">I take LLM-powered products from the lab to production at scale — owning the end-to-end lifecycle of Generative AI tools and translating technical trade-offs into business narratives for leadership.</p>
       <div class="cta">
         <a class="btn solid" href="https://www.linkedin.com/in/manish-verma-13346811a/" target="_blank" rel="noopener">LinkedIn</a>
@@ -234,7 +249,7 @@
       <div class="tl-item">
         <div class="when">Jun 2025 — Present</div>
         <h3>Senior Product Manager — R&amp;D</h3>
-        <div class="org">Xlscout.ai · Ontario, Canada</div>
+        <div class="org"><span class="logo-badge" data-i="X"><img alt="Xlscout" data-domain="xlscout.ai" src="logos/Xlscout_logo.jpg" onerror="logoFallback(this)"></span>Xlscout.ai · Ontario, Canada</div>
         <ul>
           <li>Own strategy and delivery of a portfolio of LLM-powered IP analytics products built on shared AI infrastructure.</li>
           <li>Drove portfolio ARR from $1.32M to $2.61M (~2×) by leading the production rollout of a GenAI suite — ClaimChart LLM, Standigger LLM, Invalidator LLM, Patdigger, and Product-to-Patent.</li>
@@ -245,7 +260,7 @@
       <div class="tl-item">
         <div class="when">Aug 2023 — May 2025</div>
         <h3>Product Manager — R&amp;D</h3>
-        <div class="org">Xlscout.ai · Ontario, Canada</div>
+        <div class="org"><span class="logo-badge" data-i="X"><img alt="Xlscout" data-domain="xlscout.ai" src="logos/Xlscout_logo.jpg" onerror="logoFallback(this)"></span>Xlscout.ai · Ontario, Canada</div>
         <ul>
           <li>Shipped customized automation for patent categorization and portfolio ranking (ClaimChart LLM, Standigger LLM), turning expert-heavy workflows into scalable AI-driven processes.</li>
           <li>Championed "B2B as intuitive as B2C" — consistent, user-centric experiences across enterprise tools.</li>
@@ -256,7 +271,7 @@
       <div class="tl-item">
         <div class="when">May 2022 — Jul 2023</div>
         <h3>Senior Patent Research Analyst</h3>
-        <div class="org">TT Consultants Pvt. Ltd. · Punjab, India</div>
+        <div class="org"><span class="logo-badge" data-i="TT"><img alt="TT Consultants" data-domain="ttconsultants.com" src="logos/tt_consultants_logo.png" onerror="logoFallback(this)"></span>TT Consultants Pvt. Ltd. · Punjab, India</div>
         <ul>
           <li>Business-development support under the AVP Operations, bridging research depth and commercial strategy.</li>
           <li>Prepared approach papers and proposals for pilot studies and client engagements; led technology-landscape and scouting initiatives.</li>
@@ -265,7 +280,7 @@
       <div class="tl-item">
         <div class="when">Oct 2020 — Apr 2022</div>
         <h3>Patent Research Analyst</h3>
-        <div class="org">TT Consultants Pvt. Ltd. · Punjab, India</div>
+        <div class="org"><span class="logo-badge" data-i="TT"><img alt="TT Consultants" data-domain="ttconsultants.com" src="logos/tt_consultants_logo.png" onerror="logoFallback(this)"></span>TT Consultants Pvt. Ltd. · Punjab, India</div>
         <ul>
           <li>Life-science analyst across biomedical engineering, industrial biotechnology, bio-process engineering, and bioinformatics.</li>
           <li>Conducted Patentability, Invalidation, FTO, Landscape, and Infringement analyses to support clients' strategic IP decisions.</li>
@@ -274,7 +289,7 @@
       <div class="tl-item">
         <div class="when">Aug 2019 — Sep 2020</div>
         <h3>Junior Patent Research Analyst</h3>
-        <div class="org">TT Consultants Pvt. Ltd. · Punjab, India</div>
+        <div class="org"><span class="logo-badge" data-i="TT"><img alt="TT Consultants" data-domain="ttconsultants.com" src="logos/tt_consultants_logo.png" onerror="logoFallback(this)"></span>TT Consultants Pvt. Ltd. · Punjab, India</div>
         <ul>
           <li>Executed Invalidity, FTO, Novelty, and Infringement projects across domain and cross-domain studies.</li>
           <li>Curated technical insights and enhanced underlying workflow models for searches and reports.</li>
@@ -314,12 +329,12 @@
     <div class="sec-head"><div class="eyebrow">Patent Applications</div><h2>Filed inventions.</h2>
       <p>Inventor on two filed patent applications in applied AI.</p></div>
     <a class="patent" href="https://patents.google.com/patent/US20260030308A1/en" target="_blank" rel="noopener">
-      <div class="id">US 2026/0030308 A1 · Filed 2025 · Published Jan 2026</div>
+      <div class="phead"><span class="logo-badge sm" title="Google Patents"><img alt="Google Patents" data-domain="patents.google.com" src="logos/google_patent_logo.png" onerror="logoFallback(this)"></span><div class="id">US 2026/0030308 A1 · Filed 2025 · Published Jan 2026</div></div>
       <h3>System and method for determining relevant entities and products using an LLM model</h3>
       <div class="meta">Patent application · Large Language Models <span class="go-inline">View on Google Patents →</span></div>
     </a>
     <a class="patent" href="https://patents.google.com/patent/US20240330345A1/en" target="_blank" rel="noopener">
-      <div class="id">US 2024/0330345 A1 (App. 18/625,229) · Filed Apr 2024</div>
+      <div class="phead"><span class="logo-badge sm" title="Google Patents"><img alt="Google Patents" data-domain="patents.google.com" src="logos/google_patent_logo.png" onerror="logoFallback(this)"></span><div class="id">US 2024/0330345 A1 (App. 18/625,229) · Filed Apr 2024</div></div>
       <h3>Systems and methods for generating suggestions to enhance solutions for a seed problem using LLMs and sustainable technologies</h3>
       <div class="meta">Patent application · LLMs &amp; Sustainable Technologies <span class="go-inline">View on Google Patents →</span></div>
     </a>
@@ -333,12 +348,14 @@
       <p>Author of two arXiv pre-prints on applied AI for technology and market intelligence.</p></div>
     <div class="cards">
       <a class="card" href="https://arxiv.org/abs/2507.20322" target="_blank" rel="noopener">
+        <span class="logo-badge" title="arXiv"><img alt="arXiv" data-domain="arxiv.org" src="logos/arxiv_logo.jpg" onerror="logoFallback(this)"></span>
         <div class="tag">arXiv:2507.20322 · Jul 2025</div>
         <h3>Artificial Intelligence in Patent and Market Intelligence: A New Paradigm for Technology Scouting</h3>
         <p>A framework for applying AI across patent and market intelligence to modernize technology scouting.</p>
         <span class="go">Read on arXiv</span>
       </a>
       <a class="card" href="https://arxiv.org/abs/2509.00958" target="_blank" rel="noopener">
+        <span class="logo-badge" title="arXiv"><img alt="arXiv" data-domain="arxiv.org" src="logos/arxiv_logo.jpg" onerror="logoFallback(this)"></span>
         <div class="tag">arXiv:2509.00958 · Sep 2025</div>
         <h3>A Hybrid AI Framework for Strategic Patent Portfolio Pruning</h3>
         <p>Learning-to-rank and market-need analysis for technology-transfer optimization.</p>
@@ -388,12 +405,14 @@
     <div class="sec-head"><div class="eyebrow">Projects</div><h2>Code &amp; tooling.</h2></div>
     <div class="cards">
       <a class="card" href="https://github.com/Manish-Verma-sys/ip-contact-finder" target="_blank" rel="noopener">
+        <span class="logo-badge" title="GitHub"><img alt="GitHub" data-domain="github.com" src="logos/Github_logo_svg.jpg" onerror="logoFallback(this)"></span>
         <div class="tag">GitHub · Python</div>
         <h3>ip-contact-finder</h3>
         <p>An email / contact extractor that finds relevant contacts for IP and outreach workflows — automating a manual, high-effort research task.</p>
         <span class="go">View repository</span>
       </a>
       <a class="card" href="https://github.com/Manish-Verma-sys" target="_blank" rel="noopener">
+        <span class="logo-badge" title="GitHub"><img alt="GitHub" data-domain="github.com" src="logos/Github_logo_svg.jpg" onerror="logoFallback(this)"></span>
         <div class="tag">GitHub</div>
         <h3>More on GitHub</h3>
         <p>Additional experiments and tooling around applied AI and IP automation.</p>
@@ -424,7 +443,7 @@
     <div class="sec-head"><div class="eyebrow">Education &amp; Certifications</div><h2>Foundations.</h2></div>
     <div class="edu-grid">
       <div class="panel">
-        <h3>B.Tech, Biotechnology</h3>
+        <h3 style="display:flex;align-items:center"><span class="logo-badge sm" data-i="LPU"><img alt="LPU" data-domain="lpu.in" src="logos/lovely_proffesional_university_logo.png" onerror="logoFallback(this)"></span>B.Tech, Biotechnology</h3>
         <div class="sub">Lovely Professional University · 2019 · CGPA 8.03/10</div>
         <ul>
           <li>First Division; graduated 2019, Phagwara, Punjab, India.</li>
@@ -440,6 +459,12 @@
           <li>Data Science — IBM</li>
           <li>Additional credentials — Aspiring Minds, Array-Gen, ISRO, HMX</li>
         </ul>
+        <div class="logo-row">
+          <span class="logo-badge" data-i="H" title="Harvard Medical School"><img alt="Harvard" data-domain="hms.harvard.edu" src="logos/harvard_medical_school_logo.png" onerror="logoFallback(this)"></span>
+          <span class="logo-badge" data-i="UM" title="University of Michigan"><img alt="Michigan" data-domain="umich.edu" src="logos/university_of_Michigan_logo.webp" onerror="logoFallback(this)"></span>
+          <span class="logo-badge" data-i="IBM" title="IBM"><img alt="IBM" data-domain="ibm.com" src="logos/ibm_logo.jpg" onerror="logoFallback(this)"></span>
+          <span class="logo-badge" data-i="ISRO" title="ISRO"><img alt="ISRO" data-domain="isro.gov.in" src="logos/isro.png" onerror="logoFallback(this)"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -451,9 +476,13 @@
     <div class="eyebrow">Contact</div>
     <h2>Let's talk AI products.</h2>
     <p>Open to conversations on Generative AI platforms, LLM orchestration, and product strategy.</p>
+    <div class="contact-details">
+      <div class="cd"><span class="cd-l">Email</span><a href="mailto:mkmanishkumar39@gmail.com">mkmanishkumar39@gmail.com</a></div>
+      <div class="cd"><span class="cd-l">Phone</span><a href="tel:+918847526980">+91&nbsp;88475&nbsp;26980</a></div>
+      <div class="cd"><span class="cd-l">Location</span><span>Ontario, Canada</span></div>
+    </div>
     <div class="cta">
-      <a class="btn solid" href="mailto:mkmanishkumar39@gmail.com">Email me</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/manish-verma-13346811a/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn solid" href="https://www.linkedin.com/in/manish-verma-13346811a/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn ghost" href="https://github.com/Manish-Verma-sys" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
@@ -467,6 +496,13 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
   // close mobile menu on link click
   document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+  // Logo loader: local file -> official live logo -> lettered circle
+  function logoFallback(img){
+    var s = img.dataset.step || '0';
+    if(s === '0'){ img.dataset.step='1'; img.src='https://www.google.com/s2/favicons?domain='+img.dataset.domain+'&sz=128'; }
+    else { img.onerror=null; img.style.display='none'; }
+  }
+  window.logoFallback = logoFallback;
 </script>
 </body>
 </html>
